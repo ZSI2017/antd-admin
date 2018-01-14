@@ -38,7 +38,8 @@ const Login = ({
                 required: true,
               },
             ],
-          })(<Input onPressEnter={handleOk} placeholder="Username" />)}
+          })}
+        <Input onPressEnter={handleOk} placeholder="Username" />
         </FormItem>
         <FormItem hasFeedback>
           {getFieldDecorator('password', {
