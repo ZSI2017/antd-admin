@@ -1,11 +1,28 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'dva'
-import { Button, Row, Form, Input } from 'antd'
+import { Button, Row, Form, Input,Select } from 'antd'
 import { config } from 'utils'
 import styles from './index.less'
 
 const FormItem = Form.Item
+const Option = Select.Option
+
+const selectBefore = (
+  <Select defaultValue="Http://" style={{ width: 90 }}>
+    <Option value="Http://">Http://</Option>
+    <Option value="Https://">Https://</Option>
+  </Select>
+);
+
+const selectAfter = (
+  <Select defaultValue=".com" style={{ width: 80 }}>
+    <Option value=".com">.com</Option>
+    <Option value=".jp">.jp</Option>
+    <Option value=".cn">.cn</Option>
+    <Option value=".org">.org</Option>
+  </Select>
+);
 
 const Login = ({
   loading,
@@ -29,6 +46,9 @@ const Login = ({
       <div className={styles.logo}>
         <img alt="logo" src={config.logo} />
         <span>{config.name}</span>
+      </div>
+      <div>
+        <Input addonBefore = {selectBefore} addonAfter = {selectAfter} defaultValue = "mysite" />
       </div>
       <form>
         <FormItem hasFeedback>
