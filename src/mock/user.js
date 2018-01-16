@@ -48,8 +48,8 @@ const userPermission = {
 const adminUsers = [
   {
     id: 0,
-    username: 'admin',
-    password: 'admin',
+    username: 'liqi',
+    password: '123456',
     permissions: userPermission.ADMIN,
   }, {
     id: 1,

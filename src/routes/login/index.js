@@ -8,21 +8,21 @@ import styles from './index.less'
 const FormItem = Form.Item
 const Option = Select.Option
 
-const selectBefore = (
-  <Select defaultValue="Http://" style={{ width: 90 }}>
-    <Option value="Http://">Http://</Option>
-    <Option value="Https://">Https://</Option>
-  </Select>
-);
-
-const selectAfter = (
-  <Select defaultValue=".com" style={{ width: 80 }}>
-    <Option value=".com">.com</Option>
-    <Option value=".jp">.jp</Option>
-    <Option value=".cn">.cn</Option>
-    <Option value=".org">.org</Option>
-  </Select>
-);
+// const selectBefore = (
+//   <Select defaultValue="Http://" style={{ width: 90 }}>
+//     <Option value="Http://">Http://</Option>
+//     <Option value="Https://">Https://</Option>
+//   </Select>
+// );
+//
+// const selectAfter = (
+//   <Select defaultValue=".com" style={{ width: 80 }}>
+//     <Option value=".com">.com</Option>
+//     <Option value=".jp">.jp</Option>
+//     <Option value=".cn">.cn</Option>
+//     <Option value=".org">.org</Option>
+//   </Select>
+// );
 
 const Login = ({
   loading,
@@ -48,7 +48,6 @@ const Login = ({
         <span>{config.name}</span>
       </div>
       <div>
-        <Input addonBefore = {selectBefore} addonAfter = {selectAfter} defaultValue = "mysite" />
       </div>
       <form>
         <FormItem hasFeedback>
@@ -58,8 +57,8 @@ const Login = ({
                 required: true,
               },
             ],
-          })}
-        <Input onPressEnter={handleOk} placeholder="Username" />
+          })(<Input onPressEnter={handleOk} placeholder="Username" />)}
+
         </FormItem>
         <FormItem hasFeedback>
           {getFieldDecorator('password', {
@@ -86,6 +85,7 @@ const Login = ({
 }
 
 Login.propTypes = {
+  // 校验传入的props .
   form: PropTypes.object,
   dispatch: PropTypes.func,
   loading: PropTypes.object,

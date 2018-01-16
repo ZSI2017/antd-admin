@@ -52,6 +52,8 @@ export default {
       dispatch({ type: 'query' })
       let tid
       window.onresize = () => {
+        // 利用setTimeout 简单的处理防抖问题。
+        // 避免resize 事件不断触发。
         clearTimeout(tid)
         tid = setTimeout(() => {
           dispatch({ type: 'changeNavbar' })

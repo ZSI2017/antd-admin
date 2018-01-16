@@ -65,6 +65,7 @@ const Routers = function ({ history, app }) {
     },
   ]
 
+// 定义 页面跳转路由
   return (
     <ConnectedRouter history={history}>
       <App>

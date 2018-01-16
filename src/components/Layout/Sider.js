@@ -17,7 +17,7 @@ const Sider = ({
     changeOpenKeys,
   }
   return (
-    <div>
+    <div style={{marginTop:"56px"}}>
       <div className={styles.logo}>
         <img alt="logo" src={config.logo} />
         {siderFold ? '' : <span>{config.name}</span>}
