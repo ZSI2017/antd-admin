@@ -69,23 +69,23 @@ const Routers = function ({ history, app }) {
   return (
     <ConnectedRouter history={history}>
       <App>
-        <Switch>
-          <Route exact path="/" render={() => (<Redirect to="/dashboard" />)} />
-          {
-            routes.map(({ path, ...dynamics }, key) => (
-              <Route key={key}
-                exact
-                path={path}
-                component={dynamic({
-                  app,
-                  ...dynamics,
-                })}
-              />
-            ))
-          }
+       <Switch>
+            <Route exact path="/" render={() => (<Redirect to="/dashboard" />)} />
+              {
+                routes.map(({ path, ...dynamics }, key) => (
+                  <Route key={key}
+                    exact
+                    path={path}
+                    component={dynamic({
+                      app,
+                      ...dynamics,
+                    })}
+                  />
+                ))
+              }
           <Route component={error} />
-        </Switch>
-      </App>
+         </Switch>
+       </App>
     </ConnectedRouter>
   )
 }
