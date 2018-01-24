@@ -99,6 +99,8 @@ const Menus = ({ siderFold, darkTheme, navOpenKeys, changeOpenKeys, menu, locati
     return result
   }
   if (currentMenu) {
+    console.log("currentMenu------ currentMenu ")
+    console.log(currentMenu)
     defaultSelectedKeys = getPathArray(menu, currentMenu, 'mpid', 'id')
   }
 
